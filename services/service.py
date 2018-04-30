@@ -17,9 +17,9 @@ class Server:
         users = self.db.get_users()
         return users
 
-    def add_user(self, request):
-        username = request.json['username']
-        email = request.json['email']
+    def add_user(self, json_object):
+        username = json_object['username']
+        email = json_object['email']
 
         print("service.py add_user(self)")
         print("service.py username: " + username)

@@ -19,4 +19,9 @@ You're good to go. Start it with:
 python app.py
 ```
 
+### Using Unittest
+```commandline
+$ pip install unittest2
+$ python -m unittest 
+```
 

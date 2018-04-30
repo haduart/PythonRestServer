@@ -11,6 +11,7 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
 
+
 # curl http://localhost:5000/user
 @app.route("/user", methods=["GET"])
 def get_user():
@@ -24,7 +25,8 @@ def get_user():
 # http://localhost:5000/user
 @app.route("/user", methods=["POST"])
 def add_user():
-    return server.add_user(request)
+    json_object = request.get_json()
+    return server.add_user(json_object)
 
 
 # curl --header "Content-Type: application/json" --request PUT --data '{"username":"Eduard","email":"ed@mail.com"}'
