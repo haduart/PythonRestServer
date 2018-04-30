@@ -24,13 +24,7 @@ def get_user():
 # http://localhost:5000/user
 @app.route("/user", methods=["POST"])
 def add_user():
-    print("app.py add_user")
-    username = request.json['username']
-    print("app.py username: " + username)
-    email = request.json['email']
-    print("app.py email: " + email)
-
-    return server.add_user(username, email)
+    return server.add_user(request)
 
 
 # curl --header "Content-Type: application/json" --request PUT --data '{"username":"Eduard","email":"ed@mail.com"}'
